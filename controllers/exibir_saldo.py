@@ -8,7 +8,7 @@ from views.user import userBalanceOut
 router = APIRouter(prefix='/balance', dependencies=[Depends(login_required)], tags=["Balance"])
 
 
-@router.get('/', response_model=userBalanceOut)
+@router.get('', response_model=userBalanceOut, description='Operação para checar saldo.')
 async def get_balance(id = Depends(login_required)):
     query = users.select().where(users.c.id == id['user_id'])
 

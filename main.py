@@ -12,7 +12,7 @@ async def lifespan(app: FastAPI):
   yield
   await database.disconnect()
 
-app = FastAPI(lifespan=lifespan)
+app = FastAPI(lifespan=lifespan, description="API responsável por depósitos, transferências, saques e extratos bancários.")
 app.include_router(users.router)
 app.include_router(exibir_saldo.router)
 app.include_router(auth.router)

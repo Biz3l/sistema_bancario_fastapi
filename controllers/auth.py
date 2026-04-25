@@ -5,6 +5,6 @@ from views.auth import loginOut
 
 router = APIRouter(prefix=('/auth'), tags=['Auth'])
 
-@router.post('/login', response_model=loginOut)
+@router.post('/login', response_model=loginOut, description='Autentica o usuário.')
 async def get_Login(data: loginIn):
   return sign_jwt(user_id=data.user_id)
