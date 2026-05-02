@@ -33,7 +33,7 @@ async def transfer_money(id:TransactionIn, id_user=Depends(login_required)):
   return query
 
 @router.post('/withdraw', response_model=SaqueOut, description="""
-Realiza um depósito na conta.
+Realiza um saque na conta.
 
 Regras:
 - O saldo deve ser suficiente
